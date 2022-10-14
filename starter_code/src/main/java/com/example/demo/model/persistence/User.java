@@ -19,7 +19,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "user")
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class User {
@@ -42,4 +41,9 @@ public class User {
 	@JsonIgnore
     private Cart cart;
 
+	public User(long id, String username, String password) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+	}
 }
